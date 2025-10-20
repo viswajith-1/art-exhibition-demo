@@ -2,6 +2,46 @@ import React, { useState, useEffect, useRef } from 'react';
 // Re-added imports for professional contact icons
 import { Mail, Phone } from 'lucide-react'; 
 
+
+
+// Raji Chengannur
+import raji1 from '../assets/images/raji (1).jpeg';
+import raji2 from '../assets/images/raji (2).jpeg';
+import raji3 from '../assets/images/raji (3).jpeg';
+import raji4 from '../assets/images/raji (4).jpeg';
+import rajiProfile from '../assets/images/raji.jpeg';
+
+// Mini Sharma
+import mini1 from '../assets/images/mini1.jpeg';
+import mini2 from '../assets/images/mini2.jpeg';
+import mini3 from '../assets/images/mini3.jpeg';
+import mini4 from '../assets/images/mini4.jpeg';
+import mini5 from '../assets/images/mini5.jpeg';
+import miniProfile from '../assets/images/mini.jpeg';
+
+// Sudharma
+import sudharma1 from '../assets/images/sudharma (1).jpeg';
+import sudharma2 from '../assets/images/sudharma (2).jpeg';
+import sudharma3 from '../assets/images/sudharma (3).jpeg';
+import sudharma4 from '../assets/images/sudharma (4).jpeg';
+import sudharma5 from '../assets/images/sudharma (5).jpeg';
+import sudharmaProfile from '../assets/images/sudharma.jpeg';
+
+// Saji Kumar
+import saji1 from '../assets/images/saji (1).jpeg';
+import saji2 from '../assets/images/saji (2).jpeg';
+import saji3 from '../assets/images/saji (3).jpeg';
+import saji4 from '../assets/images/saji (4).jpg';
+import saji5 from '../assets/images/saji (5).jpg';
+import sajiProfile from '../assets/images/saji.jpg';
+
+// Sajith Remady
+import sajith1 from '../assets/images/sajith (1).jpeg';
+import sajith2 from '../assets/images/sajith (2).jpeg';
+import sajith3 from '../assets/images/sajith (3).jpeg';
+import sajith4 from '../assets/images/sajith (4).jpeg';
+import sajith5 from '../assets/images/sajith (5).jpeg';
+import sajithProfile from '../assets/images/sajith.jpg';
 // Main component renamed to ArtistPage
 const ArtistPage = () => {
   const portfolioRef = useRef(null);
@@ -26,40 +66,240 @@ const Portfolio = React.forwardRef((props, ref) => {
   
   // Updated to include 5 artworks for each of the 5 artists (25 total)
   const allArtworks = [
-    // Jane Doe (5 works)
-    { id: 1, artistId: 'raji-chengannur', title: 'Close to the Coast', src: 'src/assets/images/raji (1).jpeg', alt: 'Abstract art of a crimson sky', medium: 'Acrylic', size: '24" x 36"' }, 
-    { id: 2, artistId: 'raji-chengannur', title: 'Sunlit Meadow', src: 'src/assets/images/raji (2).jpeg', alt: 'Painting of a sunlit meadow', medium: 'Acrylic', size: '18" x 18"' }, 
-    { id: 11, artistId: 'raji-chengannur', title: 'Vibrant Portrait', src: 'src/assets/images/raji (3).jpeg', alt: 'Vibrant abstract portrait', medium: 'Acrylic', size: '30" x 40"' },
-    { id: 12, artistId: 'raji-chengannur', title: 'Coastal Blur', src: 'src/assets/images/raji (4).jpeg', alt: 'Abstract coastal scene', medium: 'Acrylic', size: '20" x 16"' },
-    { id: 13, artistId: 'raji-chengannur', title: 'Inner Fire', src: 'src/assets/images/raji (1).jpeg', alt: 'Fiery abstract composition', medium: 'Acrylic', size: '48" x 48"' },
+    // Raji Chengannur (5 works)
+    {
+      id: 1,
+      artistId: "raji-chengannur",
+      title: "Close to the Coast",
+      src: raji1,
+      alt: "Abstract art of a crimson sky",
+      medium: "Acrylic",
+      size: '24" x 36"',
+    },
+    {
+      id: 2,
+      artistId: "raji-chengannur",
+      title: "Sunlit Meadow",
+      src: raji2,
+      alt: "Painting of a sunlit meadow",
+      medium: "Acrylic",
+      size: '18" x 18"',
+    },
+    {
+      id: 11,
+      artistId: "raji-chengannur",
+      title: "Vibrant Portrait",
+      src: raji3,
+      alt: "Vibrant abstract portrait",
+      medium: "Acrylic",
+      size: '30" x 40"',
+    },
+    {
+      id: 12,
+      artistId: "raji-chengannur",
+      title: "Coastal Blur",
+      src: raji4,
+      alt: "Abstract coastal scene",
+      medium: "Acrylic",
+      size: '20" x 16"',
+    },
+    {
+      id: 13,
+      artistId: "raji-chengannur",
+      title: "Inner Fire",
+      src: raji1,
+      alt: "Fiery abstract composition",
+      medium: "Acrylic",
+      size: '48" x 48"',
+    },
 
-    // John Smith (5 works)
-    { id: 3, artistId: 'mini-sharma', title: 'Urban Jungle', src: 'src/assets/images/mini1.jpeg', alt: 'Painting of a city with green elements', medium: 'Acrylic', size: '48" x 48"' }, 
-    { id: 4, artistId: 'mini-sharma', title: 'City at Dusk', src: 'src/assets/images/mini2.jpeg', alt: 'Graffiti mural of a city skyline', medium: 'Acrylic', size: '72" x 108"' }, 
-    { id: 14, artistId: 'mini-sharma', title: 'Neon Alley', src: 'src/assets/images/mini3.jpeg', alt: 'Graffiti with neon accents', medium: 'Acrylic', size: '60" x 40"' },
-    { id: 15, artistId: 'mini-sharma', title: 'Concrete Bloom', src: 'src/assets/images/mini4.jpeg', alt: 'Street art of a flower', medium: 'Acrylic', size: '24" x 24"' },
-    { id: 16, artistId: 'mini-sharma', title: 'Sky High Tag', src: 'src/assets/images/mini5.jpeg', alt: 'Abstract tag on a skyscraper', medium: 'Acrylic', size: '80" x 50"' },
+    // Mini Sharma (5 works)
+    {
+      id: 3,
+      artistId: "mini-sharma",
+      title: "Urban Jungle",
+      src: mini1,
+      alt: "Painting of a city with green elements",
+      medium: "Acrylic",
+      size: '48" x 48"',
+    },
+    {
+      id: 4,
+      artistId: "mini-sharma",
+      title: "City at Dusk",
+      src: mini2,
+      alt: "Graffiti mural of a city skyline",
+      medium: "Acrylic",
+      size: '72" x 108"',
+    },
+    {
+      id: 14,
+      artistId: "mini-sharma",
+      title: "Neon Alley",
+      src: mini3,
+      alt: "Graffiti with neon accents",
+      medium: "Acrylic",
+      size: '60" x 40"',
+    },
+    {
+      id: 15,
+      artistId: "mini-sharma",
+      title: "Concrete Bloom",
+      src: mini4,
+      alt: "Street art of a flower",
+      medium: "Acrylic",
+      size: '24" x 24"',
+    },
+    {
+      id: 16,
+      artistId: "mini-sharma",
+      title: "Sky High Tag",
+      src: mini5,
+      alt: "Abstract tag on a skyscraper",
+      medium: "Acrylic",
+      size: '80" x 50"',
+    },
 
-    // Lisa Chen (5 works)
-    { id: 5, artistId: 'sudharma', title: 'Lost in Thought', src: 'src/assets/images/sudharma (1).jpeg', alt: 'Portrait of a person lost in thought', medium: 'Acrylic', size: '2000px x 2800px' }, 
-    { id: 6, artistId: 'sudharma', title: 'Digital Dreams', src: 'src/assets/images/sudharma (2).jpeg', alt: 'Futuristic digital art', medium: 'Acrylic', size: '3000px x 4500px' }, 
-    { id: 17, artistId: 'sudharma', title: 'Cyber Fauna', src: 'src/assets/images/sudharma (3).jpeg', alt: 'Digital creature design', medium: 'Acrylic', size: '4K Resolution' },
-    { id: 18, artistId: 'sudharma', title: 'Starfall Knight', src: 'src/assets/images/sudharma (4).jpeg', alt: 'Concept art of a warrior', medium: 'Acrylic', size: '2500px x 3500px' },
-    { id: 19, artistId: 'sudharma', title: 'Pixel Bloom', src: 'src/assets/images/sudharma (5).jpeg', alt: 'Low-poly botanical art', medium: 'Acrylic', size: '1080px x 1920px' },
+    // Sudharma (5 works)
+    {
+      id: 5,
+      artistId: "sudharma",
+      title: "Lost in Thought",
+      src: sudharma1,
+      alt: "Portrait of a person lost in thought",
+      medium: "Acrylic",
+      size: "2000px x 2800px",
+    },
+    {
+      id: 6,
+      artistId: "sudharma",
+      title: "Digital Dreams",
+      src: sudharma2,
+      alt: "Futuristic digital art",
+      medium: "Acrylic",
+      size: "3000px x 4500px",
+    },
+    {
+      id: 17,
+      artistId: "sudharma",
+      title: "Cyber Fauna",
+      src: sudharma3,
+      alt: "Digital creature design",
+      medium: "Acrylic",
+      size: "4K Resolution",
+    },
+    {
+      id: 18,
+      artistId: "sudharma",
+      title: "Starfall Knight",
+      src: sudharma4,
+      alt: "Concept art of a warrior",
+      medium: "Acrylic",
+      size: "2500px x 3500px",
+    },
+    {
+      id: 19,
+      artistId: "sudharma",
+      title: "Pixel Bloom",
+      src: sudharma5,
+      alt: "Low-poly botanical art",
+      medium: "Acrylic",
+      size: "1080px x 1920px",
+    },
 
-    // Alex Rivera (5 works)
-    { id: 7, artistId: 'saji-kumar', title: 'Recycled Hope', src: 'src/assets/images/saji (1).jpeg', alt: 'Sculpture made from recycled materials', medium: 'Acrylic', size: '36" x 36" x 12"' }, 
-    { id: 8, artistId: 'saji-kumar', title: 'Cosmic Dust', src: 'src/assets/images/saji (2).jpeg', alt: 'A sculpture of the cosmos with bright stars', medium: 'Acrylic', size: '24" x 24" x 24"' }, 
-    { id: 20, artistId: 'saji-kumar', title: 'Gear Heart', src: 'src/assets/images/saji (3).jpeg', alt: 'Kinetic sculpture of a heart', medium: 'Acrylic', size: '15" x 15" x 10"' },
-    { id: 21, artistId: 'saji-kumar', title: 'Rust Echo', src: 'src/assets/images/saji (4).jpg', alt: 'Abstract metal sheet sculpture', medium: 'Acrylic', size: '50" x 30" x 5"' },
-    { id: 22, artistId: 'saji-kumar', title: 'Wind Chime', src: 'src/assets/images/saji (5).jpg', alt: 'Sound sculpture for outdoors', medium: 'Acrylic', size: '80" tall' },
+    // Saji Kumar (5 works)
+    {
+      id: 7,
+      artistId: "saji-kumar",
+      title: "Recycled Hope",
+      src: saji1,
+      alt: "Sculpture made from recycled materials",
+      medium: "Acrylic",
+      size: '36" x 36" x 12"',
+    },
+    {
+      id: 8,
+      artistId: "saji-kumar",
+      title: "Cosmic Dust",
+      src: saji2,
+      alt: "A sculpture of the cosmos with bright stars",
+      medium: "Acrylic",
+      size: '24" x 24" x 24"',
+    },
+    {
+      id: 20,
+      artistId: "saji-kumar",
+      title: "Gear Heart",
+      src: saji3,
+      alt: "Kinetic sculpture of a heart",
+      medium: "Acrylic",
+      size: '15" x 15" x 10"',
+    },
+    {
+      id: 21,
+      artistId: "saji-kumar",
+      title: "Rust Echo",
+      src: saji4,
+      alt: "Abstract metal sheet sculpture",
+      medium: "Acrylic",
+      size: '50" x 30" x 5"',
+    },
+    {
+      id: 22,
+      artistId: "saji-kumar",
+      title: "Wind Chime",
+      src: saji5,
+      alt: "Sound sculpture for outdoors",
+      medium: "Acrylic",
+      size: '80" tall',
+    },
 
-    // Maria Garcia (5 works)
-    { id: 9, artistId: 'sajith-remady', title: 'Spring Bloom', src: 'src/assets/images/sajith (1).jpeg', alt: 'Watercolor of flowers blooming', medium: 'Acrylic', size: '11" x 14"' }, 
-    { id: 10, artistId: 'sajith-remady', title: 'Weaving Tales', src: 'src/assets/images/sajith (2).jpeg', alt: 'Tapestry telling a story', medium: 'Acrylic', size: '48" x 60"' }, 
-    { id: 23, artistId: 'sajith-remady', title: 'Ancestral Threads', src: 'src/assets/images/sajith (3).jpeg', alt: 'Hand-woven cultural textile', medium: 'Acrylic', size: '72" x 72"' },
-    { id: 24, artistId: 'sajith-remady', title: 'Indigo Dye', src: 'src/assets/images/sajith (4).jpeg', alt: 'Shibori dye pattern', medium: 'Acrylic', size: '40" x 40"' },
-    { id: 25, artistId: 'sajith-remady', title: 'Harvest Tapestry', src: 'src/assets/images/sajith (5).jpeg', alt: 'Tapestry depicting a harvest', medium: 'Acrylic', size: '60" x 90"' },
+    // Sajith Remady (5 works)
+    {
+      id: 9,
+      artistId: "sajith-remady",
+      title: "Spring Bloom",
+      src: sajith1,
+      alt: "Watercolor of flowers blooming",
+      medium: "Acrylic",
+      size: '11" x 14"',
+    },
+    {
+      id: 10,
+      artistId: "sajith-remady",
+      title: "Weaving Tales",
+      src: sajith2,
+      alt: "Tapestry telling a story",
+      medium: "Acrylic",
+      size: '48" x 60"',
+    },
+    {
+      id: 23,
+      artistId: "sajith-remady",
+      title: "Ancestral Threads",
+      src: sajith3,
+      alt: "Hand-woven cultural textile",
+      medium: "Acrylic",
+      size: '72" x 72"',
+    },
+    {
+      id: 24,
+      artistId: "sajith-remady",
+      title: "Indigo Dye",
+      src: sajith4,
+      alt: "Shibori dye pattern",
+      medium: "Acrylic",
+      size: '40" x 40"',
+    },
+    {
+      id: 25,
+      artistId: "sajith-remady",
+      title: "Harvest Tapestry",
+      src: sajith5,
+      alt: "Tapestry depicting a harvest",
+      medium: "Acrylic",
+      size: '60" x 90"',
+    },
   ];
 
   // Updated profileSrc colors to grayscale
