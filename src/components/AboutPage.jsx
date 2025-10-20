@@ -1,4 +1,5 @@
 import React from 'react';
+import posterImage from '../assets/images/poster.jpeg';
 
 // Main component name changed from App to AboutPage
 const AboutPage = () => {
@@ -10,7 +11,7 @@ const AboutPage = () => {
     curator: "Raji Chengannur, Sajikumar V. S., Sajith Remady, Minisharma, & Sudharma", // Updated curator/featured group
     // REDUCED the description into a single, concise paragraph
     description: "The distinguished ‘5 Fingers’ Group is set to unveil a monumental exhibition, celebrating over three and a half decades of artistic dedication and international acclaim. This show is a tribute to their enduring commitment, showcasing a meticulously honed body of work that has earned both national and international recognition. The exhibition promises a visual feast of diverse expressions, techniques, and philosophical depth, inviting art lovers to experience a significant milestone in Kerala’s art history. It represents a convergence of five lives dedicated to shaping the contemporary art movement.",
-    posterUrl: "src/assets/images/poster.jpeg"
+    posterUrl: posterImage,
     // REMOVED contact property
   };
   
