@@ -309,7 +309,7 @@ const Portfolio = React.forwardRef((props, ref) => {
       id: 'raji-chengannur', 
       name: 'Raji Chengannur', 
       description: "Starting their journey at the Govt Ravivarma College of Fine Arts, Mavelikkara, this dynamic artist has painted a path across the globe! After exciting roles as an illustrator for Kala Kaumudi weekly and an art teacher in the UAE, they now work as a full-time freelance artist. Their vibrant work has earned spots in major international shows like the South Korean International Art Fair and the Jaipur Art Festival, and is happily held in collections across the US, UK, South Korea, and South Africa.", 
-      profileSrc: 'src/assets/images/raji.jpeg', // Dark Gray
+      profileSrc: rajiProfile, // Dark Gray
       phone: '+91 8547024903', 
       email: 'rajichengannur@gmail.com',
       borderColor: 'border-yellow-600'
