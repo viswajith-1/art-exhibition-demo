@@ -1,4 +1,5 @@
 import React from 'react';
+import backgroundImage from '../assets/images/background.png';
 
 // This component uses the same dramatic styling and layout (full-width, centered text, dark background)
 // as the previous request, but with updated text for an 'Art Exhibition' theme.
@@ -6,7 +7,7 @@ import React from 'react';
 const HeroPage = () => {
   // IMPORTANT: The path below assumes the image 'background.jpg' is available in the hosting environment.
   // In a typical React project, you might import it, but here we use the direct path.
-  const backgroundImagePath = 'src/assets/images/background.png';
+  const backgroundImagePath = backgroundImage;
 
   return (
     // The main container. Sets the height, background, and text color.
