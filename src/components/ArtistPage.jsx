@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 // Re-added imports for professional contact icons
 import { Mail, Phone } from 'lucide-react'; 
 
-// Main App component
-const App = () => {
+// Main component renamed to ArtistPage
+const ArtistPage = () => {
   const portfolioRef = useRef(null);
 
   return (
@@ -27,39 +27,39 @@ const Portfolio = React.forwardRef((props, ref) => {
   // Updated to include 5 artworks for each of the 5 artists (25 total)
   const allArtworks = [
     // Jane Doe (5 works)
-    { id: 1, artistId: 'raji-chengannur', title: 'Close to the Coast', src: 'src/assets/images/raji (1).jpeg', alt: 'Abstract art of a crimson sky', medium: 'Water Color', size: '24" x 36"' }, 
-    { id: 2, artistId: 'raji-chengannur', title: 'Sunlit Meadow', src: 'src/assets/images/raji (2).jpeg', alt: 'Painting of a sunlit meadow', medium: 'Acrylic on wood panel', size: '18" x 18"' }, 
-    { id: 11, artistId: 'raji-chengannur', title: 'Vibrant Portrait', src: 'src/assets/images/raji (3).jpeg', alt: 'Vibrant abstract portrait', medium: 'Mixed Acrylic', size: '30" x 40"' },
-    { id: 12, artistId: 'raji-chengannur', title: 'Coastal Blur', src: 'src/assets/images/raji (4).jpeg', alt: 'Abstract coastal scene', medium: 'Pastel and Charcoal', size: '20" x 16"' },
-    { id: 13, artistId: 'raji-chengannur', title: 'Inner Fire', src: 'src/assets/images/raji (1).jpeg', alt: 'Fiery abstract composition', medium: 'Oil on Linen', size: '48" x 48"' },
+    { id: 1, artistId: 'raji-chengannur', title: 'Close to the Coast', src: 'src/assets/images/raji (1).jpeg', alt: 'Abstract art of a crimson sky', medium: 'Acrylic', size: '24" x 36"' }, 
+    { id: 2, artistId: 'raji-chengannur', title: 'Sunlit Meadow', src: 'src/assets/images/raji (2).jpeg', alt: 'Painting of a sunlit meadow', medium: 'Acrylic', size: '18" x 18"' }, 
+    { id: 11, artistId: 'raji-chengannur', title: 'Vibrant Portrait', src: 'src/assets/images/raji (3).jpeg', alt: 'Vibrant abstract portrait', medium: 'Acrylic', size: '30" x 40"' },
+    { id: 12, artistId: 'raji-chengannur', title: 'Coastal Blur', src: 'src/assets/images/raji (4).jpeg', alt: 'Abstract coastal scene', medium: 'Acrylic', size: '20" x 16"' },
+    { id: 13, artistId: 'raji-chengannur', title: 'Inner Fire', src: 'src/assets/images/raji (1).jpeg', alt: 'Fiery abstract composition', medium: 'Acrylic', size: '48" x 48"' },
 
     // John Smith (5 works)
-    { id: 3, artistId: 'mini-sharma', title: 'Urban Jungle', src: 'src/assets/images/mini1.jpeg', alt: 'Painting of a city with green elements', medium: 'Mixed media on brick', size: '48" x 48"' }, 
-    { id: 4, artistId: 'mini-sharma', title: 'City at Dusk', src: 'src/assets/images/mini2.jpeg', alt: 'Graffiti mural of a city skyline', medium: 'Spray paint on concrete', size: '72" x 108"' }, 
-    { id: 14, artistId: 'mini-sharma', title: 'Neon Alley', src: 'src/assets/images/mini3.jpeg', alt: 'Graffiti with neon accents', medium: 'Spray Paint on Wood', size: '60" x 40"' },
-    { id: 15, artistId: 'mini-sharma', title: 'Concrete Bloom', src: 'src/assets/images/mini4.jpeg', alt: 'Street art of a flower', medium: 'Stenciled Ink', size: '24" x 24"' },
-    { id: 16, artistId: 'mini-sharma', title: 'Sky High Tag', src: 'src/assets/images/mini5.jpeg', alt: 'Abstract tag on a skyscraper', medium: 'Aerosol on Metal', size: '80" x 50"' },
+    { id: 3, artistId: 'mini-sharma', title: 'Urban Jungle', src: 'src/assets/images/mini1.jpeg', alt: 'Painting of a city with green elements', medium: 'Acrylic', size: '48" x 48"' }, 
+    { id: 4, artistId: 'mini-sharma', title: 'City at Dusk', src: 'src/assets/images/mini2.jpeg', alt: 'Graffiti mural of a city skyline', medium: 'Acrylic', size: '72" x 108"' }, 
+    { id: 14, artistId: 'mini-sharma', title: 'Neon Alley', src: 'src/assets/images/mini3.jpeg', alt: 'Graffiti with neon accents', medium: 'Acrylic', size: '60" x 40"' },
+    { id: 15, artistId: 'mini-sharma', title: 'Concrete Bloom', src: 'src/assets/images/mini4.jpeg', alt: 'Street art of a flower', medium: 'Acrylic', size: '24" x 24"' },
+    { id: 16, artistId: 'mini-sharma', title: 'Sky High Tag', src: 'src/assets/images/mini5.jpeg', alt: 'Abstract tag on a skyscraper', medium: 'Acrylic', size: '80" x 50"' },
 
     // Lisa Chen (5 works)
-    { id: 5, artistId: 'sudharma', title: 'Lost in Thought', src: 'https://placehold.co/600x700/f0f8ff/111111?text=Lost+in+Thought', alt: 'Portrait of a person lost in thought', medium: 'Digital art', size: '2000px x 2800px' }, 
-    { id: 6, artistId: 'sudharma', title: 'Digital Dreams', src: 'https://placehold.co/500x800/e8f5e9/111111?text=Digital+Dreams', alt: 'Futuristic digital art', medium: 'Digital art', size: '3000px x 4500px' }, 
-    { id: 17, artistId: 'sudharma', title: 'Cyber Fauna', src: 'https://placehold.co/600x600/e3f2fd/111111?text=Cyber+Fauna', alt: 'Digital creature design', medium: '3D Render', size: '4K Resolution' },
-    { id: 18, artistId: 'sudharma', title: 'Starfall Knight', src: 'https://placehold.co/600x600/f1f8e9/111111?text=Starfall+Knight', alt: 'Concept art of a warrior', medium: 'Digital Painting', size: '2500px x 3500px' },
-    { id: 19, artistId: 'sudharma', title: 'Pixel Bloom', src: 'https://placehold.co/600x600/fff8e1/111111?text=Pixel+Bloom', alt: 'Low-poly botanical art', medium: 'Vector Illustration', size: '1080px x 1920px' },
+    { id: 5, artistId: 'sudharma', title: 'Lost in Thought', src: 'src/assets/images/sudharma (1).jpeg', alt: 'Portrait of a person lost in thought', medium: 'Acrylic', size: '2000px x 2800px' }, 
+    { id: 6, artistId: 'sudharma', title: 'Digital Dreams', src: 'src/assets/images/sudharma (2).jpeg', alt: 'Futuristic digital art', medium: 'Acrylic', size: '3000px x 4500px' }, 
+    { id: 17, artistId: 'sudharma', title: 'Cyber Fauna', src: 'src/assets/images/sudharma (3).jpeg', alt: 'Digital creature design', medium: 'Acrylic', size: '4K Resolution' },
+    { id: 18, artistId: 'sudharma', title: 'Starfall Knight', src: 'src/assets/images/sudharma (4).jpeg', alt: 'Concept art of a warrior', medium: 'Acrylic', size: '2500px x 3500px' },
+    { id: 19, artistId: 'sudharma', title: 'Pixel Bloom', src: 'src/assets/images/sudharma (5).jpeg', alt: 'Low-poly botanical art', medium: 'Acrylic', size: '1080px x 1920px' },
 
     // Alex Rivera (5 works)
-    { id: 7, artistId: 'saji-kumar', title: 'Recycled Hope', src: 'src/assets/images/saji (1).jpeg', alt: 'Sculpture made from recycled materials', medium: 'Reclaimed metal and wood', size: '36" x 36" x 12"' }, 
-    { id: 8, artistId: 'saji-kumar', title: 'Cosmic Dust', src: 'src/assets/images/saji (2).jpeg', alt: 'A sculpture of the cosmos with bright stars', medium: 'Found objects', size: '24" x 24" x 24"' }, 
-    { id: 20, artistId: 'saji-kumar', title: 'Gear Heart', src: 'src/assets/images/saji (3).jpeg', alt: 'Kinetic sculpture of a heart', medium: 'Brass and Copper', size: '15" x 15" x 10"' },
-    { id: 21, artistId: 'saji-kumar', title: 'Rust Echo', src: 'src/assets/images/saji (4).jpg', alt: 'Abstract metal sheet sculpture', medium: 'Salvaged Steel', size: '50" x 30" x 5"' },
-    { id: 22, artistId: 'saji-kumar', title: 'Wind Chime', src: 'src/assets/images/saji (5).jpg', alt: 'Sound sculpture for outdoors', medium: 'Recycled Glass', size: '80" tall' },
+    { id: 7, artistId: 'saji-kumar', title: 'Recycled Hope', src: 'src/assets/images/saji (1).jpeg', alt: 'Sculpture made from recycled materials', medium: 'Acrylic', size: '36" x 36" x 12"' }, 
+    { id: 8, artistId: 'saji-kumar', title: 'Cosmic Dust', src: 'src/assets/images/saji (2).jpeg', alt: 'A sculpture of the cosmos with bright stars', medium: 'Acrylic', size: '24" x 24" x 24"' }, 
+    { id: 20, artistId: 'saji-kumar', title: 'Gear Heart', src: 'src/assets/images/saji (3).jpeg', alt: 'Kinetic sculpture of a heart', medium: 'Acrylic', size: '15" x 15" x 10"' },
+    { id: 21, artistId: 'saji-kumar', title: 'Rust Echo', src: 'src/assets/images/saji (4).jpg', alt: 'Abstract metal sheet sculpture', medium: 'Acrylic', size: '50" x 30" x 5"' },
+    { id: 22, artistId: 'saji-kumar', title: 'Wind Chime', src: 'src/assets/images/saji (5).jpg', alt: 'Sound sculpture for outdoors', medium: 'Acrylic', size: '80" tall' },
 
     // Maria Garcia (5 works)
-    { id: 9, artistId: 'sajith-remedy', title: 'Spring Bloom', src: 'src/assets/images/sajith (1).jpeg', alt: 'Watercolor of flowers blooming', medium: 'Watercolor and ink on paper', size: '11" x 14"' }, 
-    { id: 10, artistId: 'sajith-remedy', title: 'Weaving Tales', src: 'src/assets/images/sajith (2).jpeg', alt: 'Tapestry telling a story', medium: 'Woven cotton and wool', size: '48" x 60"' }, 
-    { id: 23, artistId: 'sajith-remedy', title: 'Ancestral Threads', src: 'src/assets/images/sajith (3).jpeg', alt: 'Hand-woven cultural textile', medium: 'Natural Fibers', size: '72" x 72"' },
-    { id: 24, artistId: 'sajith-remedy', title: 'Indigo Dye', src: 'src/assets/images/sajith (4).jpeg', alt: 'Shibori dye pattern', medium: 'Silk and Indigo Dye', size: '40" x 40"' },
-    { id: 25, artistId: 'sajith-remedy', title: 'Harvest Tapestry', src: 'src/assets/images/sajith (5).jpeg', alt: 'Tapestry depicting a harvest', medium: 'Wool and Llama Hair', size: '60" x 90"' },
+    { id: 9, artistId: 'sajith-remady', title: 'Spring Bloom', src: 'src/assets/images/sajith (1).jpeg', alt: 'Watercolor of flowers blooming', medium: 'Acrylic', size: '11" x 14"' }, 
+    { id: 10, artistId: 'sajith-remady', title: 'Weaving Tales', src: 'src/assets/images/sajith (2).jpeg', alt: 'Tapestry telling a story', medium: 'Acrylic', size: '48" x 60"' }, 
+    { id: 23, artistId: 'sajith-remady', title: 'Ancestral Threads', src: 'src/assets/images/sajith (3).jpeg', alt: 'Hand-woven cultural textile', medium: 'Acrylic', size: '72" x 72"' },
+    { id: 24, artistId: 'sajith-remady', title: 'Indigo Dye', src: 'src/assets/images/sajith (4).jpeg', alt: 'Shibori dye pattern', medium: 'Acrylic', size: '40" x 40"' },
+    { id: 25, artistId: 'sajith-remady', title: 'Harvest Tapestry', src: 'src/assets/images/sajith (5).jpeg', alt: 'Tapestry depicting a harvest', medium: 'Acrylic', size: '60" x 90"' },
   ];
 
   // Updated profileSrc colors to grayscale
@@ -70,45 +70,45 @@ const Portfolio = React.forwardRef((props, ref) => {
       name: 'Raji Chengannur', 
       description: "Starting their journey at the Govt Ravivarma College of Fine Arts, Mavelikkara, this dynamic artist has painted a path across the globe! After exciting roles as an illustrator for Kala Kaumudi weekly and an art teacher in the UAE, they now work as a full-time freelance artist. Their vibrant work has earned spots in major international shows like the South Korean International Art Fair and the Jaipur Art Festival, and is happily held in collections across the US, UK, South Korea, and South Africa.", 
       profileSrc: 'src/assets/images/raji.jpeg', // Dark Gray
-      phone: '+919876543210', 
-      email: 'jane.doe@example.com',
+      phone: '+91 8547024903', 
+      email: 'rajichengannur@gmail.com',
       borderColor: 'border-yellow-600'
     },
     { 
       id: 'mini-sharma', 
       name: 'Mini Sharma', 
-      description: "Mini's work is a powerful commentary on urban life, transforming cityscapes into stunning, dynamic murals.", 
+      description: "Mini Sharma's art is a vibrant and fluid blend of nature and surrealism, featuring hornbills and exotic flowers enveloped by swirling, organic shapes and rich colors. Her dynamic compositions are filled with a sense of movement, using flowing lines to suggest an unseen energy in a captivating, mystical atmosphere. She masterfully plays with light and shadow, enhancing the dreamlike and dramatic quality that gives depth to each scene.", 
       profileSrc: 'src/assets/images/mini.jpeg', // Medium Dark Gray
-      phone: '+919876543211', 
-      email: 'john.smith@example.com',
+      phone: '+91 9495556649', 
+      email: 'minisharma@gmail.com',
       borderColor: 'border-blue-600' // CHANGED FROM ORANGE TO YELLOW
     },
     { 
       id: 'saji-kumar', 
-      name: 'SAJIKUMAR V S', 
-      description: "Lisa's digital art blends fantasy and reality, creating whimsical characters and breathtaking dreamscapes.", 
+      name: 'Sajikumar V S', 
+      description: "Sajikumar V S is a nationally acclaimed artist and art teacher from Kerala, celebrated for his innovative work, particularly with Jawahar Navodaya Vidyalayas. His significant contributions to education have been recognized with the prestigious National Teacher Award and the National ICT Award for Teachers. Known for creatively integrating art with other subjects and transforming school campuses with student-led projects like murals and sculptures, Sajikumar is a passionate advocate for a more holistic and creative educational system in India, even serving on the CBSE's Art Integrated Education Guidelines committee.", 
       profileSrc: 'src/assets/images/saji.jpg', // Medium Gray
-      phone: '+919544449403', 
+      phone: '+91 9544449403', 
       email: 'sajijnvaleppey@gmail.com',
       borderColor: 'border-green-600'
     },
     { 
-      id: 'sajith-remedy', 
-      name: 'SAJITH REMEDY', 
-      description: "Maria's intricate tapestries tell stories passed down through generations, weaving together history and culture.", 
+      id: 'sajith-remady', 
+      name: 'Sajith Remady', 
+      description: "Sajith A. Remady is an accomplished Indian artist and art teacher from Kerala, holding a National Diploma in Fine Arts from the Raja Ravi Varma College of Fine Arts, Mavelikkara. With a career spanning several decades, he has showcased his work in numerous solo and group exhibitions. He is the recipient of the Sidhartha Foundation State Award for Nature Painting (2017) and is known for his plein air painting series - 'Canvas on Wheels'.", 
       profileSrc: 'src/assets/images/sajith.jpg', // Lighter Gray
-      phone: '+919876543214', 
-      email: 'maria.garcia@example.com',
+      phone: '+91 9946998488', 
+      email: 'sajithremady123@gmail.com',
       borderColor: 'border-purple-600'
     },
     { 
       id: 'sudharma', 
       name: 'Sudharma', 
-      description: "Alex's sculptures are crafted from salvaged materials, breathing new life into forgotten objects.", 
-      profileSrc: 'https://placehold.co/150x150/666666/ffffff?text=AR', // Light Medium Gray
-      phone: '+919876543213', 
-      email: 'alex.rivera@example.com',
-      borderColor: 'border-blue-600'
+      description: "Sudharma is an artist with a highly distinctive style, creating intricate compositions from dense, cellular or web-like patterns. Within this complex matrix, figurative forms—such as human bodies, faces, and hands—emerge and recede, suggesting a profound interconnectedness between the subject and its environment. This unique technique, combined with a varied color palette, results in visually compelling and thought-provoking works that explore the blurring lines between the individual and the universe.", 
+      profileSrc: 'src/assets/images/sudharma.jpeg', // Light Medium Gray
+      phone: '+91 9447190578', 
+      email: 'sudharma@gmail.com',
+      borderColor: 'border-blue-300'
     },
 
   ];
@@ -144,7 +144,7 @@ const Portfolio = React.forwardRef((props, ref) => {
   }, []);
 
   return (
-    <section id="portfolio" className="pt-12 pb-6 bg-white" ref={ref}>
+    <section id="artists" className="pt-12 pb-6 bg-white" ref={ref}>
       
       {artists.map((artist, index) => (
         <section 
@@ -290,4 +290,4 @@ const Portfolio = React.forwardRef((props, ref) => {
 });
 
 
-export default App;
+export default ArtistPage;

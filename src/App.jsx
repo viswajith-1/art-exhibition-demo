@@ -1,19 +1,27 @@
-import './App.css'
-import AboutPage from './components/AboutPage'
-import ArtistPage from './components/ArtistPage'
-import HeroPage from './components/HeroPage'
-import Navbar from './components/Navbar'
+import React from 'react';
 
-function App() {
-  
+// Import all the components
+import Navbar from './components/Navbar.jsx';
+import HeroPage from './components/HeroPage.jsx';
+import AboutPage from './components/AboutPage.jsx';
+import ArtistPage from './components/ArtistPage.jsx';
+
+const App = () => {
   return (
-    <>
-    <Navbar/>
-    <HeroPage/>
-    <AboutPage/>
-    <ArtistPage/>
-    </>
-  )
-}
+    <div>
+      <Navbar />
+      <main>
+        <section id="home">
+          <HeroPage />
+        </section>
+        <section id="about">
+          <AboutPage />
+        </section>
+        {/* The ArtistPage component contains the section with the "artists" id */}
+        <ArtistPage />
+      </main>
+    </div>
+  );
+};
 
-export default App
+export default App;

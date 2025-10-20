@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-// Data for navigation links
+// Data for navigation links - UPDATED
 const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '#about' },
+    { name: 'Artists', href: '#artists' },
 ];
 
 /**

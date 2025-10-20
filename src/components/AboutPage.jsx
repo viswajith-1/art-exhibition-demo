@@ -5,25 +5,26 @@ const AboutPage = () => {
   // Mock data for the exhibition
   const exhibitionData = {
     title: "Five Fingers", // Exhibition name
-    date: "October 15 - November 30, 2025",
-    location: "The Modern Gallery, Digital Wing",
-    curator: "The Five Featured Artists", // Updated curator/featured group
-    description: "The 'Five Fingers' exhibition is a collective retrospective featuring the distinct voices and groundbreaking work of five pioneering contemporary artists. Each 'finger' represents a unique perspective across various mediums—from abstract expressionism to digital sculpture. Together, their works explore themes of connection, identity, and the modern human human condition, showcasing the power of collaboration and individual mastery.", // Updated description
-    // Updated placeholder image text to match the new title and color changed to teal for refresh
-    posterUrl: "src/assets/images/poster.jpeg" 
+    date: "October 24 - November 2, 2025",
+    location: "David Hall, Kochi",
+    curator: "Raji Chengannur, Sajikumar V. S., Sajith Remady, Minisharma, & Sudharma", // Updated curator/featured group
+    // REDUCED the description into a single, concise paragraph
+    description: "The distinguished ‘5 Fingers’ Group is set to unveil a monumental exhibition, celebrating over three and a half decades of artistic dedication and international acclaim. This show is a tribute to their enduring commitment, showcasing a meticulously honed body of work that has earned both national and international recognition. The exhibition promises a visual feast of diverse expressions, techniques, and philosophical depth, inviting art lovers to experience a significant milestone in Kerala’s art history. It represents a convergence of five lives dedicated to shaping the contemporary art movement.",
+    posterUrl: "src/assets/images/poster.jpeg"
+    // REMOVED contact property
   };
   
   return (
-    // Using a React fragment. The style block for the font has been removed.
+    // Using a React fragment.
     <>
-      {/* Outer Content Container - Font class removed to use browser default. */}
+      {/* Outer Content Container */}
       <div 
         className={`min-h-screen bg-white p-4 sm:p-10 flex items-center justify-center`}
       >
         {/* Centering container for the card */}
-        <div className="max-w-6xl mx-auto my-12"> {/* Adjusted margin to standard spacing */}
+        <div className="max-w-6xl mx-auto my-12">
           
-          {/* Main Card Container */}
+          {/* Main Card Container with shadow */}
           <div 
             className="flex flex-col md:flex-row bg-white shadow-2xl overflow-hidden"
           >
@@ -32,7 +33,7 @@ const AboutPage = () => {
             <div 
               className={`md:w-1/2 p-6 bg-teal-600 flex items-center justify-center`}
             >
-              {/* Poster Image Wrapper */}
+              {/* Poster Image Wrapper with shadow */}
               <div className="w-full max-w-sm overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-300">
                 <img
                   src={exhibitionData.posterUrl}
@@ -64,17 +65,31 @@ const AboutPage = () => {
               {/* Description */}
               <div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">About the Show</h3>
-                <p className="text-gray-600 leading-relaxed text-lg">
+                {/* ADDED text-justify and removed whitespace-pre-wrap */}
+                <p className="text-gray-600 leading-relaxed text-lg text-justify">
                   {exhibitionData.description}
                 </p>
               </div>
 
               {/* Key Details */}
               <div className={`space-y-4`}>
-                  {/* Subtle hover effect added to DetailBox for micro-interaction */}
                   <DetailBox icon="📅" label="Dates" value={exhibitionData.date} />
-                  <DetailBox icon="📍" label="Location" value={exhibitionData.location} />
-                  <DetailBox icon="👥" label="Featured By" value={exhibitionData.curator} />
+                  <DetailBox 
+                    icon="📍" 
+                    label="Location" 
+                    value={
+                      <a 
+                        href="https://maps.app.goo.gl/7uwnrxmdESMNWY6aA" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="hover:underline"
+                      >
+                        {exhibitionData.location}
+                      </a>
+                    } 
+                  />
+                  <DetailBox icon="👥" label="Featured Artists" value={exhibitionData.curator} />
+                  {/* REMOVED Contact DetailBox */}
               </div>
               
             </div>
@@ -96,5 +111,4 @@ const DetailBox = ({ icon, label, value }) => (
     </div>
 );
 
-// Changed export from App to AboutPage
 export default AboutPage;

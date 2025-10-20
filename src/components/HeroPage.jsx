@@ -44,10 +44,10 @@ const HeroPage = () => {
         {/* Sub-text/Details - Mimics the 'BONG' and '2024' lines */}
         <div className="flex flex-col sm:flex-row items-center justify-center mt-8 space-y-3 sm:space-y-0 sm:space-x-12 text-xl md:text-3xl font-normal tracking-wider text-gray-100">
           <p className="border-b border-gray-400 pb-1">
-            AT THE CULTURIST GALLERY
+            AT DAVID HALL, KOCHI
           </p>
           <p className="text-2xl font-light">
-            OCT 2025
+            OCT 24TH - NOV 2ND  2025
           </p>
         </div>
       </div>
